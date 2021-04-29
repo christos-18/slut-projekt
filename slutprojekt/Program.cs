@@ -30,7 +30,7 @@ namespace Slutprojekt
             int continueplaying = 1;
             
 
-            RunGame();
+            RunGame(); // RunGame är metoden där spelet kommer loopas i och när man väl är färdig så frågar den ifall man vill spela igen eller avsluta programet. 
 
             while (continueplaying == 1)
             {
@@ -86,7 +86,7 @@ namespace Slutprojekt
         }
         
 
-        static string RumEtt(string[,] inventory)
+        static string RumEtt(string[,] inventory) // Här kommer det komma 4 rum där man kommer kunna plocka upp olika föremål. I varje rum är det max 3 alternativ man kan välja. 
         {
             Console.WriteLine("I detta rum finns det 3 föremål att plocka upp");
             Console.WriteLine("Skriv vilket föremål du vill plocka upp 1, 2 eller 3");
@@ -94,7 +94,7 @@ namespace Slutprojekt
             Console.WriteLine("2. Sköld");
             Console.WriteLine("3. Snabba dojor");
 
-            int val = LäsInInt();
+            int val = LäsInInt(); 
             string item = "";
             
 
@@ -110,12 +110,12 @@ namespace Slutprojekt
             {
                 item = "Snabba Dojor";
             }
-            inventory[0, 0] = item;
+            inventory[0, 0] = item; // Föremålet man väljer kommer den att hamna i inventoryt på plats 0, 0
             return inventory[0, 0];
 
 
         }
-        static string RumTvå(string[,] inventory)
+        static string RumTvå(string[,] inventory) // static string för att det ska vara möjligt att returnera informationen
         {
             Console.Clear();
 
@@ -141,7 +141,7 @@ namespace Slutprojekt
                 item = "2000 Guld";
                 
              }
-            inventory[0, 1] = item;
+            inventory[0, 1] = item; // Föremålet man väljer kommer den att hamna i inventoryt på plats 0, 1
             return inventory[0, 1];
 
 
@@ -171,7 +171,7 @@ namespace Slutprojekt
             {
                 item = "+50 Magic resistance";
             }
-            inventory[1, 0] = item;
+            inventory[1, 0] = item; // Föremålet man väljer kommer den att hamna i inventoryt på plats 1, 0
             return inventory[1, 0];
         }
         static string RumFyra(string[,] inventory)
@@ -199,7 +199,7 @@ namespace Slutprojekt
             {
                 item = "5000 Guld";
             }
-            inventory[1, 1] = item;
+            inventory[1, 1] = item; // Föremålet man väljer kommer den att hamna i inventoryt på plats 1, 1
             return inventory[1, 1];
         }
 
@@ -225,7 +225,8 @@ namespace Slutprojekt
 
 
 
-        static int LäsInInt()
+        static int LäsInInt() // När man skriver in vilket föremål man ska ha är det viktigt att så till att spelet vet hur de ska agera när man trycker på andra knappar.
+        //Jag slipper skriva om den här delen i alla rum genom att bara kalla på den här metoden istället. 
         {
             int val = 0;
             while (true)
